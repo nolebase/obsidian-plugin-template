@@ -48,7 +48,7 @@ class SomeViewPlugin implements PluginValue {
   }
 }
 
-export default class UnoCSSPlugin extends Plugin {
+export default class SomePlugin extends Plugin {
   async onload() {
     const editorPlugins = ViewPlugin.define(view => new SomeViewPlugin(view))
 

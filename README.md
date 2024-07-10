@@ -29,6 +29,7 @@ So everything is configured for you to start developing your own plugin, immedia
    3. In the `README.md` file.
 3. Fill in a URL to your repository. You can replace with `https://github.com/nolebase/obsidian-plugin-template`
 4. Fill in the Why, Features, What can you do with it, Demos, How to install, TODOs, feel free to remove the sections that are not needed.
+5. Replace the name `SomeViewPlugin` and `SomePlugin` with your own plugin name.
 
 ## ⚠️ How to publish?
 
