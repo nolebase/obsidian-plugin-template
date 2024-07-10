@@ -12,14 +12,9 @@
   "license": "MIT",
   "keywords": [
     "nolebase",
-    "readabilities",
-    "markdown",
     "nolebase-integration",
     "obsidian",
-    "obsidian-plugin",
-    "unocss",
-    "tailwindcss",
-    "unocss-plugin"
+    "obsidian-plugin"
   ],
   "main": "./dist/main.js",
   "files": [

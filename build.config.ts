@@ -20,11 +20,6 @@ export default defineBuildConfig({
     '@lezer/common',
     '@lezer/highlight',
     '@lezer/lr',
-    // UnoCSS
-    '@iconify/utils/lib/loader/fs',
-    '@iconify/utils/lib/loader/install-pkg',
-    '@iconify/utils/lib/loader/node-loader',
-    '@iconify/utils/lib/loader/node-loaders',
     // Builtins
     ...builtins,
   ],
