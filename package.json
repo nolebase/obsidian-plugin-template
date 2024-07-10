@@ -1,0 +1,44 @@
+{
+  "name": "obsidian-plugin-template",
+  "type": "module",
+  "version": "0.1.0",
+  "packageManager": "pnpm@9.5.0",
+  "description": "Obsidian Template Plugin",
+  "author": {
+    "name": "Nólëbase",
+    "email": "nolebase@ayaka.moe",
+    "url": "https://github.com/nolebase"
+  },
+  "license": "MIT",
+  "keywords": [
+    "nolebase",
+    "readabilities",
+    "markdown",
+    "nolebase-integration",
+    "obsidian",
+    "obsidian-plugin",
+    "unocss",
+    "tailwindcss",
+    "unocss-plugin"
+  ],
+  "main": "./dist/main.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "cleanup": "rm -rf ./main.js && rm -rf ./main.js.map",
+    "build": "unbuild && pnpm run cleanup && pnpm run copy",
+    "copy": "cp ./dist/main.js ./main.js && cp ./dist/main.js.map ./main.js.map",
+    "lint": "eslint --cache ."
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^2.21.0",
+    "@codemirror/view": "^6.28.4",
+    "@types/node": "^20.14.10",
+    "builtin-modules": "^3.3.0",
+    "eslint": "^8.57.0",
+    "obsidian": "^1.5.7",
+    "typescript": "^5.5.3",
+    "unbuild": "^2.0.0"
+  }
+}
