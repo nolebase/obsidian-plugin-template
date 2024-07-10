@@ -21,9 +21,7 @@
     "dist"
   ],
   "scripts": {
-    "cleanup": "rm -rf ./main.js && rm -rf ./main.js.map",
-    "build": "unbuild && pnpm run cleanup && pnpm run copy",
-    "copy": "cp ./dist/main.js ./main.js && cp ./dist/main.js.map ./main.js.map",
+    "build": "unbuild",
     "lint": "eslint --cache ."
   },
   "devDependencies": {
