@@ -21,6 +21,7 @@
     "dist"
   ],
   "scripts": {
+    "build:dev": "NODE_EMV=development unbuild",
     "build": "unbuild",
     "lint": "eslint --cache ."
   },

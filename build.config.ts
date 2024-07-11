@@ -1,5 +1,7 @@
 import { exec } from 'node:child_process'
 import { promisify } from 'node:util'
+import { env } from 'node:process'
+
 import { defineBuildConfig } from 'unbuild'
 import builtins from 'builtin-modules'
 
@@ -34,7 +36,7 @@ export default defineBuildConfig({
     output: {
       dir: './dist',
       format: 'cjs',
-      sourcemap: true,
+      sourcemap: env.NODE_ENV === 'development' ? 'inline' : false,
       entryFileNames: 'main.js',
     },
     // required for unocss, ofetch, etc.
@@ -46,10 +48,7 @@ export default defineBuildConfig({
   hooks: {
     'build:done': async () => {
       await execAsync('rm -rf ./main.js')
-      await execAsync('rm -rf ./main.js.map')
-
       await execAsync('cp ./dist/main.js ./main.js')
-      await execAsync('cp ./dist/main.js.map ./main.js.map')
     },
   },
 })
