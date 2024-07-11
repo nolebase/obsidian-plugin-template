@@ -128,10 +128,10 @@ If you use [`@antfu/ni`](https://github.com/antfu/ni), you can also use the foll
 ni
 ```
 
-6. Build the plugin
+6. Build the plugin for development
 
 ```shell
-pnpm run build
+pnpm run build:dev
 ```
 
 If you use [`@antfu/ni`](https://github.com/antfu/ni), you can also use the following command:
