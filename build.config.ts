@@ -44,11 +44,10 @@ export default defineBuildConfig({
     inlineDependencies: true,
   },
   hooks: {
-    'build:before': async () => {
+    'build:done': async () => {
       await execAsync('rm -rf ./main.js')
       await execAsync('rm -rf ./main.js.map')
-    },
-    'build:done': async () => {
+
       await execAsync('cp ./dist/main.js ./main.js')
       await execAsync('cp ./dist/main.js.map ./main.js.map')
     },
