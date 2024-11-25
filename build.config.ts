@@ -1,11 +1,12 @@
-import { exec } from 'node:child_process'
-import { promisify } from 'node:util'
-import { env } from 'node:process'
+import { copyFile, rm } from 'node:fs/promises'
+import { join } from 'node:path'
 
-import { defineBuildConfig } from 'unbuild'
+import { cwd } from 'node:process'
 import builtins from 'builtin-modules'
+import { defineBuildConfig } from 'unbuild'
 
-const execAsync = promisify(exec)
+import { generateObsidianPluginManifest } from './scripts/manifest'
+import { toErrorable } from './scripts/utils'
 
 export default defineBuildConfig({
   outDir: './dist',
@@ -36,7 +37,7 @@ export default defineBuildConfig({
     output: {
       dir: './dist',
       format: 'cjs',
-      sourcemap: env.NODE_ENV === 'development' ? 'inline' : false,
+      sourcemap: 'inline',
       entryFileNames: 'main.js',
     },
     // required for unocss, ofetch, etc.
@@ -46,9 +47,14 @@ export default defineBuildConfig({
     inlineDependencies: true,
   },
   hooks: {
+    'build:before': async () => {
+      await toErrorable(async () => await rm(join(cwd(), 'main.js')))
+      await toErrorable(async () => await rm(join(cwd(), 'manifest.json')))
+    },
     'build:done': async () => {
-      await execAsync('rm -rf ./main.js')
-      await execAsync('cp ./dist/main.js ./main.js')
+      await generateObsidianPluginManifest()
+      await copyFile(join(cwd(), 'dist', 'main.js'), join(cwd(), 'main.js'))
+      await copyFile(join(cwd(), 'dist', 'manifest.json'), join(cwd(), 'manifest.json'))
     },
   },
 })

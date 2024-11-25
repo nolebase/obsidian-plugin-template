@@ -1,6 +1,6 @@
-import { Plugin } from 'obsidian'
 import type { EditorView, PluginValue, ViewUpdate } from '@codemirror/view'
 import { ViewPlugin } from '@codemirror/view'
+import { Plugin } from 'obsidian'
 
 function sleep(ms: number) {
   return new Promise(resolve => setTimeout(resolve, ms))
