@@ -1,4 +1,5 @@
 import type { EditorView, PluginValue, ViewUpdate } from '@codemirror/view'
+
 import { ViewPlugin } from '@codemirror/view'
 import { Plugin } from 'obsidian'
 

@@ -2,7 +2,7 @@
   "name": "obsidian-plugin-template",
   "type": "module",
   "version": "0.1.0",
-  "packageManager": "pnpm@9.14.2",
+  "packageManager": "pnpm@10.18.1",
   "description": "Obsidian Template Plugin",
   "author": {
     "name": "Nólëbase",
@@ -24,16 +24,19 @@
     "build": "unbuild",
     "lint": "eslint --cache .",
     "lint:fix": "eslint --cache --fix .",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "up": "taze -w -r -I -f && pnpm prune && pnpm dedupe",
+    "nolyfill": "pnpm dlx nolyfill"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^3.9.2",
-    "@codemirror/view": "^6.35.0",
-    "@types/node": "^22.9.3",
-    "builtin-modules": "^3.3.0",
-    "eslint": "^9.15.0",
-    "obsidian": "^1.7.2",
-    "typescript": "^5.7.2",
-    "unbuild": "^2.0.0"
+    "@antfu/eslint-config": "^5.4.1",
+    "@codemirror/view": "^6.38.5",
+    "@types/node": "^24.7.0",
+    "builtin-modules": "^5.0.0",
+    "eslint": "^9.37.0",
+    "obsidian": "^1.10.0",
+    "taze": "^19.7.0",
+    "typescript": "^5.9.3",
+    "unbuild": "^3.6.1"
   }
 }

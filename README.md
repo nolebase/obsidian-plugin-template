@@ -131,7 +131,7 @@ ni
 6. Build the plugin for development
 
 ```shell
-pnpm run build:dev
+pnpm run build
 ```
 
 If you use [`@antfu/ni`](https://github.com/antfu/ni), you can also use the following command:
