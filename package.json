@@ -36,7 +36,7 @@
     "eslint": "^9.37.0",
     "obsidian": "^1.10.0",
     "taze": "^19.7.0",
-    "typescript": "^5.9.3",
+    "typescript": "^6.0.0",
     "unbuild": "^3.6.1"
   }
 }
