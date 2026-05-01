@@ -29,7 +29,7 @@
     "nolyfill": "pnpm dlx nolyfill"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^5.4.1",
+    "@antfu/eslint-config": "^8.0.0",
     "@codemirror/view": "^6.38.5",
     "@types/node": "^24.7.0",
     "builtin-modules": "^5.0.0",
